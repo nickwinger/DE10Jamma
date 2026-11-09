@@ -10,6 +10,12 @@ Dieses Projekt entwickelt [DE10Jamma V2 von smdjeff](https://github.com/smdjeff/
 
 Die Dateien `fabrication.zip` und `production_files/*` sind **keine V3-Fertigungsfreigabe**. Details: [Fertigungsdaten](production_files/README.md).
 
+## V2 weiterverwenden, vor der einzigen Bestellung prüfen
+
+V3 bleibt eine gezielte Erweiterung von DE10Jamma V2. Mechanik, JAMMA-Anschluss sowie Video-/Audioschaltung werden soweit möglich weiterverwendet. Änderungen konzentrieren sich auf die getrennte Pinbelegung, die DB15-Schieberegister-/USB-HID-Anbindung und deren elektrische Integration. SNAC kommt nur optional mit geprüftem Anschlussplan hinzu; die drei Pflichtwege haben Vorrang.
+
+Dieses private Projekt plant **genau eine PCB**, keine Prototypenserie. Die [Teststrategie](docs/TEST_STRATEGY.md) beschreibt Netz-/Pinprüfungen, RTL-Simulation, elektrische Berechnungen/Simulationen, FPGA-Builds und Layout-/Passformkontrolle vor der Bestellung. Sie ist ein Prüfplan: ausführbare Tests und ihre Ergebnisse sind noch zu erstellen. Die Freigabekriterien stehen in der [Roadmap](docs/ROADMAP.md).
+
 ## Was V3 können soll
 
 | Funktion | V3-Ziel |
@@ -73,6 +79,7 @@ Ein externer HDMI-zu-JAMMA-Konverter ist für diesen Aufbau nicht vorgesehen. An
 
 - [Architektur und feste Designentscheidungen](docs/ARCHITECTURE.md)
 - [Pinplanung und reservierte DB15-Signale](docs/PINPLAN.md)
+- [Teststrategie: Simulationen, Pinprüfung und Nachweise](docs/TEST_STRATEGY.md)
 - [Roadmap und Abnahmetests](docs/ROADMAP.md)
 - [Status der Fertigungsdaten](production_files/README.md)
 - [Änderungsprotokoll](CHANGELOG.md)

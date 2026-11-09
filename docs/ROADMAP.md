@@ -2,6 +2,8 @@
 
 Die Architektur ist festgelegt. Offene Punkte sind konkrete Arbeitsaufträge. Ein Häkchen bedeutet ein vorhandenes Ergebnis, nicht bloß eine Absicht.
 
+Die [Teststrategie](TEST_STRATEGY.md) konkretisiert Werkzeuge, Test-IDs, Sollkriterien und Nachweise. Maßgabe ist die gezielte Weiterverwendung von DE10Jamma V2: notwendige Pin-/Eingabeanpassungen umsetzen, übernommene Video-/Audio-/Mechanikblöcke erhalten und gegen unbeabsichtigte Änderungen prüfen. SNAC bleibt optional.
+
 ## Kostenrahmen: eine einzige PCB
 
 Dies ist ein privates Einzelstückprojekt. Geplant ist **genau eine V3-PCB**, keine Prototypenserie und keine eingeplante PCB-Nachbestellung. Ziel ist, dass der erste gefertigte Aufbau die festgelegten Funktionen erfüllt. USB-HID, DB15 und Direct GPIO bleiben Pflichtumfang; an der Architektur ändert sich nichts.
@@ -20,6 +22,15 @@ Eine fehlerfreie Erstfunktion ist das Entwicklungsziel, keine vor dem Hardwarete
 - [x] Veraltete projektlokale KiCad-Bibliothekspfade auf `libs/` korrigiert.
 - [x] Übernommene V2-Fertigungsdaten klar vom V3-Ziel getrennt.
 - [x] Einzelstückbudget und Prüfung vor der einzigen PCB-Bestellung verbindlich dokumentiert.
+- [x] Änderungsbezogene Teststrategie mit Test-IDs, Sollkriterien und Nachweisformat dokumentiert; Ausführung bleibt offen.
+
+## 0. Reproduzierbare Prüfgrundlage
+
+- [ ] V2-Referenznetze und Änderungsumfang erfassen; unabhängige Soll-Pinbelegung aus Herstellerunterlagen abgleichen.
+- [ ] Werkzeugversionen und Modelle festhalten; Netz-/Pinprüfungen sowie negative Prüffälle nach PIN-01 bis PIN-06 implementieren.
+- [ ] RTL-Testumgebung und Registermodell nach RTL-01 bis RTL-08 implementieren, ohne eine Simulation aller Spiele vorauszusetzen.
+- [ ] Elektrische Berechnungen und gezielte Simulationen für die geänderten Teilblöcke nach ELEC-01 bis ELEC-05 vorbereiten.
+- [ ] Ausführbare Prüfaufrufe und Ergebnisablage einrichten; Automatisierung lokal oder in CI ohne vorausgesetzte kostenpflichtige Dienste.
 
 ## 1. Schaltplan und vollständiger Pinplan
 
@@ -63,7 +74,7 @@ Eine fehlerfreie Erstfunktion ist das Entwicklungsziel, keine vor dem Hardwarete
 
 ## Freigabe vor der einzigen PCB-Bestellung
 
-Diese Liste ist vor einer Bestellempfehlung abzuarbeiten. Es werden keine Häkchen allein aufgrund einer Planungsbeschreibung gesetzt.
+Diese Liste ist vor einer Bestellempfehlung abzuarbeiten. Es werden keine Häkchen allein aufgrund einer Planungsbeschreibung gesetzt. Die Prüfnachweise folgen den IDs und Ergebniszuständen aus [TEST_STRATEGY.md](TEST_STRATEGY.md).
 
 - [ ] Jede Pflichtverbindung ist vom JAMMA-/Kick-Kontakt über den Schaltplan und das PCB-Netz bis zum DE10-Header und FPGA-Package-Pin abgeglichen.
 - [ ] Versorgung, Signalpegel, Pull-ups, Ausgangstreiber und dauerhaft angeschlossene Eingabewege sind für die vorgesehenen Standard-, DB15- und Direct-Bitstreams sowie Boot/Reset geprüft.
@@ -99,4 +110,4 @@ Latenz und Jitter werden getrennt für USB, DB15 und Direct GPIO gemessen. Es we
 
 ## Nächster Arbeitsschritt
 
-Den vollständigen V2-Netz-/Headerplan in das Format aus [PINPLAN.md](PINPLAN.md) übertragen und daraus die neue parallele V3-Belegung im Schaltplan umsetzen. Die drei DB15-Leitungen und die Architektur werden dabei nicht erneut zur Entscheidung gestellt. Eine Fertigungsbestellung erfolgt erst nach der oben dokumentierten Freigabe.
+Den vollständigen V2-Netz-/Headerplan in das Format aus [PINPLAN.md](PINPLAN.md) übertragen und daraus die neue parallele V3-Belegung im Schaltplan umsetzen. Dabei die unabhängige Pinprüfung und die Tests der geänderten Eingabelogik nach [TEST_STRATEGY.md](TEST_STRATEGY.md) aufbauen. Die drei DB15-Leitungen und die Architektur werden dabei nicht erneut zur Entscheidung gestellt. Eine Fertigungsbestellung erfolgt erst nach der oben dokumentierten Freigabe.

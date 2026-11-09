@@ -1,6 +1,6 @@
 # Arbeitsregeln für DE10Jamma V3
 
-Diese Regeln gelten für Beiträge und Coding-Agenten in diesem Repository. Fachliche Grundlage: [README](README.md), [Architektur](docs/ARCHITECTURE.md), [Pinplan](docs/PINPLAN.md) und [Roadmap](docs/ROADMAP.md).
+Diese Regeln gelten für Beiträge und Coding-Agenten in diesem Repository. Fachliche Grundlage: [README](README.md), [Architektur](docs/ARCHITECTURE.md), [Pinplan](docs/PINPLAN.md), [Teststrategie](docs/TEST_STRATEGY.md) und [Roadmap](docs/ROADMAP.md).
 
 ## Bereits entschiedene Anforderungen
 
@@ -23,6 +23,13 @@ Diese Regeln gelten für Beiträge und Coding-Agenten in diesem Repository. Fach
 - Keine hundertprozentige Erstfunktion oder Hardwarevalidierung allein aus Simulation, Synthese oder ERC/DRC behaupten. Verbleibende, erst am gefertigten Board prüfbare Eigenschaften vor der Bestellung konkret benennen.
 - Die einzige gefertigte Platine wird bei der Inbetriebnahme getestet. Diese Abnahme ist keine geplante Wegwerf-Prototypenrunde. Notwendige zusätzliche Ausgaben bedürfen einer neuen ausdrücklichen Entscheidung des Eigentümers.
 
+## Minimaländerungsprinzip
+
+- DE10Jamma V2 weiterverwenden. Mechanik, JAMMA-Anschluss, RGB-DAC und Audio soweit möglich erhalten; keine unnötige Neuentwicklung oder allgemeine Modernisierung.
+- Änderungen auf notwendige Pinumlegung, DB15-Register-/HID-Anbindung und deren elektrische Integration konzentrieren. Jede weitere Änderung braucht einen konkreten Grund und eine passende Prüfung.
+- Unveränderte Blöcke gegen V2 vergleichen; geänderte Eingabe-/Versorgungslasten gezielt berechnen beziehungsweise simulieren. Nicht die komplette Plattform neu erfinden, um Tests zu ermöglichen.
+- Optionales SNAC nur mit geprüftem Pin-/Pegel-/Portplan ergänzen. Die drei Pflichtwege weder einschränken noch wegen SNAC neu diskutieren.
+
 ## Umsetzung
 
 - Offene Pinzuordnung, Routing und Tests sind TODOs. Architekturentscheidungen nicht ohne konkrete neue Evidenz erneut zur Diskussion stellen.
@@ -36,3 +43,5 @@ Diese Regeln gelten für Beiträge und Coding-Agenten in diesem Repository. Fach
 ## Nach jeder Änderung
 
 Änderungsumfang und tatsächlich ausgeführte Prüfungen dokumentieren. Statische Dateiprüfung, KiCad-ERC/DRC, Synthese und Hardwaretests sind unterschiedliche Nachweise. Geplante Funktionen nicht als implementiert oder getestet ausgeben. Die Roadmap entsprechend fortschreiben.
+
+Die [Teststrategie](docs/TEST_STRATEGY.md) definiert Test-IDs, Sollkriterien und Ergebnisnachweise. Soll-Pinplan unabhängig gegen Herstellerunterlagen prüfen; Testmodelle nicht nur aus derselben zu prüfenden Implementierung ableiten. Nicht ausgeführte Tests bleiben sichtbar offen. Eine Dokumentationsänderung ist keine bestandene Simulation und keine Fertigungsfreigabe.
