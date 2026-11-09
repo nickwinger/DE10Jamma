@@ -13,6 +13,16 @@ Diese Regeln gelten für Beiträge und Coding-Agenten in diesem Repository. Fach
 - SNAC ist optional, nur soweit passende GPIOs nach dem Pflichtumfang verbleiben. Nicht vorsorglich alle USER_IO-Pins reservieren oder den Pflichtumfang dafür reduzieren.
 - Standard-Cores bleiben als USB-Fallback ein Entwicklungsziel; eigene Direct-Cores verwenden die V3-Pinbelegung.
 
+## Verbindlicher Kosten- und Fertigungsrahmen
+
+- Privates Einzelstückprojekt: geplant ist genau eine V3-PCB für den eigenen Aufbau. Keine Prototypenserie und keine eingeplanten kostenpflichtigen PCB-Nachbestellungen.
+- Ziel ist ein funktionierender Erstaufbau. Die Entwicklung verlagert die möglichen Prüfungen vor die Bestellung: Netz-/Pinabgleich, Bauteil- und Footprintkontrolle, RTL-Simulation, Synthese/Timing, ERC/DRC und mechanische Kontrolle.
+- Die drei Pflicht-Eingabewege bleiben unverändert. Die Budgetvorgabe ist kein Anlass, die Architektur erneut zur Diskussion zu stellen.
+- V2-Schaltungsteile soweit sinnvoll übernehmen und nachvollziehbar prüfen; bloße Übernahme ist kein Nachweis, dass V2 bereits vollständig hardwaregetestet ist.
+- Fertigungsunterlagen erst nach der dokumentierten Freigabe in der Roadmap zur Bestellung empfehlen. Fertiger-Stückzahl, Bestückungsumfang und Gesamtkosten müssen zur Einzelstückvorgabe passen; keine zusätzlichen Ausgaben oder Mindestmengen stillschweigend als akzeptiert behandeln.
+- Keine hundertprozentige Erstfunktion oder Hardwarevalidierung allein aus Simulation, Synthese oder ERC/DRC behaupten. Verbleibende, erst am gefertigten Board prüfbare Eigenschaften vor der Bestellung konkret benennen.
+- Die einzige gefertigte Platine wird bei der Inbetriebnahme getestet. Diese Abnahme ist keine geplante Wegwerf-Prototypenrunde. Notwendige zusätzliche Ausgaben bedürfen einer neuen ausdrücklichen Entscheidung des Eigentümers.
+
 ## Umsetzung
 
 - Offene Pinzuordnung, Routing und Tests sind TODOs. Architekturentscheidungen nicht ohne konkrete neue Evidenz erneut zur Diskussion stellen.
